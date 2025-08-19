@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="M2 Fitness-Shop & Health — Fitness Ebook, training programs, and health tips accessible to everyone.">
+  <title>M2 Fitness-Shop & Health</title>
+  <link rel="stylesheet" href="style_shop.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>M2 Fitness-Shop & Health</h1>
+    <nav>
+      <ul>
+        <li><a href="#ebook">E-Book</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="https://github.com/M2Fitness" target="_blank">About us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <!-- EBOOK PREVIEW -->
+    <section id="ebook" class="preview-wrapper fade-in-up">
+      <iframe
+        src="Ebook%20M2%20Fitness.pdf#page=3&zoom=100"
+        title="Blurred preview of the M2 Fitness E-Book"
+        loading="lazy">
+      </iframe>
+
+      
+      <div class="preview-overlay">
+        <div class="preview-card">
+          <!-- Lock icon -->
+          <svg class="lock" viewBox="0 0 24 24" fill="none">
+            <path d="M7 10V7a5 5 0 1 1 10 0v3" stroke="white" stroke-width="1.6"/>
+            <rect x="4" y="10" width="16" height="10" rx="2.4" stroke="white" stroke-width="1.6"/>
+            <circle cx="12" cy="15" r="1.6" fill="white"/>
+          </svg>
+
+          <span class="preview-badge">Blurred Preview</span>
+          <div class="preview-title">Fitness E-Book (Sample)</div>
+          <div class="preview-sub">Unlock full access to view all content</div>
+
+          <a class="gumroad-button" href="https://m2fitness.gumroad.com/l/rksny" target="_blank" rel="noopener">
+            Buy — €1.99
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOP SECTION -->
+    <section id="shop" class="shop-section fade-in-up">
+      <h2>Shop</h2>
+      <p>Find all our exclusive training programs and products in our online store.</p>
+      <a href="https://m2fitness.gumroad.com" target="_blank" class="btn">Visit the Store</a>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="fade-in-up">
+    <p>© 2025 — M2 Fitness-Shop & Health</p>
+  </footer>
+
+  <!-- Gumroad Script -->
+  <script src="https://gumroad.com/js/gumroad.js"></script>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const elements = document.querySelectorAll('.fade-in-up');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // animate only once
+        }
+      });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
